@@ -149,6 +149,7 @@ const command = new SlashCommandBuilder()
       .addChoices(
         { name: "January", value: "01" },
         { name: "February", value: "02" },
+        { name: "March", value: "03" },
         { name: "April", value: "04" },
         { name: "May", value: "05" },
         { name: "June", value: "06" },

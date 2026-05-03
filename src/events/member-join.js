@@ -16,21 +16,20 @@ async function memberJoin(member) {
   } else {
     // TODO: temporary measure when expecting an influx of members
     player = createPlayer(member.id, member.displayName);
-
-    let division = {
-      class: "Soldier",
-      name: "Wood",
-    };
-    updatePlayerDivision(member.id, division);
-    division.class = "Demo";
-    updatePlayerDivision(member.id, division);
-
-    const roles = member.guild.roles.cache;
-
-    const soldierRole = roles.get(divisionRoleIds.get(`Wood Soldier`));
-    await member.roles.add(soldierRole);
-    const demoRole = roles.get(divisionRoleIds.get(`Wood Demo`));
-    await member.roles.add(demoRole);
+    // let division = {
+    //   class: "Soldier",
+    //   name: "Wood",
+    // };
+    // updatePlayerDivision(member.id, division);
+    // division.class = "Demo";
+    // updatePlayerDivision(member.id, division);
+    //
+    // const roles = member.guild.roles.cache;
+    //
+    // const soldierRole = roles.get(divisionRoleIds.get(`Wood Soldier`));
+    // await member.roles.add(soldierRole);
+    // const demoRole = roles.get(divisionRoleIds.get(`Wood Demo`));
+    // await member.roles.add(demoRole);
   }
 }
 
