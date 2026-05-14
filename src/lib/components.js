@@ -83,9 +83,17 @@ function getMapSelectModal(tourneyClass) {
   const modal = new ModalBuilder()
     .setCustomId("mapSelect")
     .setTitle(`${tourneyClass} Tourney Maps`);
-  const platGoldMap = new TextInputBuilder()
-    .setCustomId("plat_gold_map")
-    .setLabel("Diamond / Platinum / Gold Map")
+  const diamondMap = new TextInputBuilder()
+    .setCustomId("diamond_map")
+    .setLabel("Diamond Map")
+    .setStyle(TextInputStyle.Short);
+  const platinumMap = new TextInputBuilder()
+    .setCustomId("platinum_map")
+    .setLabel("Platinum Map")
+    .setStyle(TextInputStyle.Short);
+  const goldMap = new TextInputBuilder()
+    .setCustomId("gold_map")
+    .setLabel("Gold Map")
     .setStyle(TextInputStyle.Short);
   const silverMap = new TextInputBuilder()
     .setCustomId("silver_map")
@@ -104,15 +112,14 @@ function getMapSelectModal(tourneyClass) {
     .setLabel("Wood Map")
     .setStyle(TextInputStyle.Short);
 
-  const platGoldMapRow = new ActionRowBuilder().addComponents(platGoldMap);
+  const diamondMapRow = new ActionRowBuilder().addComponents(diamondMap);
+  const platinumMapRow = new ActionRowBuilder().addComponents(platinumMap);
+  const goldMapRow = new ActionRowBuilder().addComponents(goldMap);
   const silverMapRow = new ActionRowBuilder().addComponents(silverMap);
   const bronzeMapRow = new ActionRowBuilder().addComponents(bronzeMap);
   const steelMapRow = new ActionRowBuilder().addComponents(steelMap);
   const woodMapRow = new ActionRowBuilder().addComponents(woodMap);
-  modal.addComponents(platGoldMapRow, silverMapRow, bronzeMapRow, steelMapRow);
-  // if (tourneyClass === "Soldier") {
-  modal.addComponents(woodMapRow); // wood only applies to soldier
-  // }
+  modal.addComponents(diamondMapRow, platinumMapRow, goldMapRow, silverMapRow, bronzeMapRow, steelMapRow, woodMapRow);
   return modal;
 }
 
@@ -193,13 +200,12 @@ ${player.demo_division ? roleMention(divisionRoleIds.get(player.demo_division + 
       },
       {
         name: "Profiles",
-        value: `${
-          player.tempus_id
-            ? `${hyperlink("Tempus Plaza", `https://tempusplaza.com/players/${player.tempus_id}`)}
+        value: `${player.tempus_id
+          ? `${hyperlink("Tempus Plaza", `https://tempusplaza.com/players/${player.tempus_id}`)}
 ${hyperlink("Tempus", `https://tempus2.xyz/players/${player.tempus_id}`)}
 ${hyperlink("Steam", formatSteamURL(player.steam_id))}`
-            : `${inlineCode("No Linked Tempus ID")}`
-        }`,
+          : `${inlineCode("No Linked Tempus ID")}`
+          }`,
       },
     );
   return embed;
