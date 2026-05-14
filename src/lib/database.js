@@ -130,7 +130,7 @@ function createTourney(tourney) {
   if (!activetourney) {
     const insert =
       db.prepare(`INSERT OR IGNORE INTO tournament (class, diamond_map, platinum_map, gold_map, silver_map, bronze_map, steel_map, wood_map, starts_at, ends_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     insert.run(
       tourney.class,
       tourney.diamond,

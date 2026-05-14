@@ -272,9 +272,9 @@ async function executeCommand(interaction) {
     const submittedMapFields = submittedMapResponse.fields;
     const submittedTourney = new Tournament(
       tourneyClass,
-      submittedMapFields.getTextInputValue("diamond_map"),
-      submittedMapFields.getTextInputValue("platinum_map"),
-      submittedMapFields.getTextInputValue("gold_map"),
+      submittedMapFields.getTextInputValue("plat_gold_map"),
+      submittedMapFields.getTextInputValue("plat_gold_map"),
+      submittedMapFields.getTextInputValue("plat_gold_map"),
       submittedMapFields.getTextInputValue("silver_map"),
       submittedMapFields.getTextInputValue("bronze_map"),
       submittedMapFields.getTextInputValue("steel_map"),
@@ -289,13 +289,13 @@ async function executeCommand(interaction) {
     // tourney confirmation message
     const tourneyResponse = await submittedMapResponse.reply({
       content: `${tourneyClass} tournament start date set to ${discordTimestamp}
-        Diamond Map: ${inlineCode(submittedTourney.diamond)}
-        Platinum Map: ${inlineCode(submittedTourney.platinum)}
-        Gold Map: ${inlineCode(submittedTourney.gold)}
-        Silver Map: ${inlineCode(submittedTourney.silver)}
-        Bronze Map: ${inlineCode(submittedTourney.bronze)}
-        Steel Map: ${inlineCode(submittedTourney.steel)}
-        Wood Map: ${inlineCode(submittedTourney.wood)}`,
+Diamond Map: ${inlineCode(submittedTourney.diamond)}
+Platinum Map: ${inlineCode(submittedTourney.platinum)}
+Gold Map: ${inlineCode(submittedTourney.gold)}
+Silver Map: ${inlineCode(submittedTourney.silver)}
+Bronze Map: ${inlineCode(submittedTourney.bronze)}
+Steel Map: ${inlineCode(submittedTourney.steel)}
+Wood Map: ${inlineCode(submittedTourney.wood)}`,
       components: [confirmRow],
       withResponse: true,
     });

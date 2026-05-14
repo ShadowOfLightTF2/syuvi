@@ -64,13 +64,13 @@ export default {
         updateTourneyMap(tourney);
 
         interaction.editReply(`${tourney.class} tournament maps updated to..
-          Diamond: ${inlineCode(tourney.diamond_map)}
-          Platinum: ${inlineCode(tourney.platinum_map)}
-          Gold: ${inlineCode(tourney.gold_map)}
-          Silver: ${inlineCode(tourney.silver_map)}
-          Bronze: ${inlineCode(tourney.bronze_map)}
-          Steel: ${inlineCode(tourney.steel_map)}
-          Wood: ${inlineCode(tourney.wood_map)}`);
+  Diamond: ${inlineCode(tourney.diamond_map)}
+  Platinum: ${inlineCode(tourney.platinum_map)}
+  Gold: ${inlineCode(tourney.gold_map)}
+  Silver: ${inlineCode(tourney.silver_map)}
+  Bronze: ${inlineCode(tourney.bronze_map)}
+  Steel: ${inlineCode(tourney.steel_map)}
+  Wood: ${inlineCode(tourney.wood_map)}`);
       }
     }
   },

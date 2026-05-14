@@ -83,17 +83,9 @@ function getMapSelectModal(tourneyClass) {
   const modal = new ModalBuilder()
     .setCustomId("mapSelect")
     .setTitle(`${tourneyClass} Tourney Maps`);
-  const diamondMap = new TextInputBuilder()
-    .setCustomId("diamond_map")
-    .setLabel("Diamond Map")
-    .setStyle(TextInputStyle.Short);
-  const platinumMap = new TextInputBuilder()
-    .setCustomId("platinum_map")
-    .setLabel("Platinum Map")
-    .setStyle(TextInputStyle.Short);
-  const goldMap = new TextInputBuilder()
-    .setCustomId("gold_map")
-    .setLabel("Gold Map")
+  const platGoldMap = new TextInputBuilder()
+    .setCustomId("plat_gold_map")
+    .setLabel("Diamond / Platinum / Gold Map")
     .setStyle(TextInputStyle.Short);
   const silverMap = new TextInputBuilder()
     .setCustomId("silver_map")
@@ -112,14 +104,12 @@ function getMapSelectModal(tourneyClass) {
     .setLabel("Wood Map")
     .setStyle(TextInputStyle.Short);
 
-  const diamondMapRow = new ActionRowBuilder().addComponents(diamondMap);
-  const platinumMapRow = new ActionRowBuilder().addComponents(platinumMap);
-  const goldMapRow = new ActionRowBuilder().addComponents(goldMap);
+  const platGoldMapRow = new ActionRowBuilder().addComponents(platGoldMap);
   const silverMapRow = new ActionRowBuilder().addComponents(silverMap);
   const bronzeMapRow = new ActionRowBuilder().addComponents(bronzeMap);
   const steelMapRow = new ActionRowBuilder().addComponents(steelMap);
   const woodMapRow = new ActionRowBuilder().addComponents(woodMap);
-  modal.addComponents(diamondMapRow, platinumMapRow, goldMapRow, silverMapRow, bronzeMapRow, steelMapRow, woodMapRow);
+  modal.addComponents(platGoldMapRow, silverMapRow, bronzeMapRow, steelMapRow, woodMapRow);
   return modal;
 }
 
